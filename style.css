@@ -1,0 +1,285 @@
+/* skapar en klass för buttongroup för att hela gruppen av buttons ska vara centrerad och ha ingen border */
+.button-group {
+    border: none;
+    justify-content: center;
+}
+/* lägger en standard body style vilket innebär att varje body(som i alla fall inte har en vinnande klass eller id tilldelat) kommer att se ut 
+på följande sätt */
+body {
+    background-color: black;
+    padding-top: 0%;
+    font-family: "Oswald", sans-serif;
+    font-style: italic;
+    max-width: 100%;
+    text-align: center;
+}
+/* Upprepning, alltså varje h1 element kommer att by default se ut på följande sätt */
+h1 {
+    color:rgb(223, 243, 38);
+    margin: 150px 0px 120px 0px;
+}
+/* klassen imagerow vilken finns i varje större div container för images, berättar att bredden är 100% alltså hela sidan och display flex(row by default) */
+.imagerow {
+    display: flex;
+    width: 100%;
+}
+/* klassen som användts bara för bilden som befinner sig på contact.html, det behöver en separat klass(separat style) eftersom dess höjd
+alltså storlek som stort skiljer sig mycket ifrån de andra bilderna, skulle kunna skriva style i html style men skapade en klass för den istället*/
+.eboostimg {
+    height: 600px;
+    width: 200px;
+    padding: 100px 0px 80px 100px;
+}
+/* skapar en klass för de div containern som finns inuti div containern med klassen imagerow för att definiera hur stor del av rowen bilden ska få
+dessutom hur höga diven är och deras width i pixel */
+.imgcolumn {
+    width: 150px;
+    height: 150px;
+    flex: 33.33%;
+}
+/* upprepning, lägger till en default utseende font family och font wight för en h2 element, samt att den ska ha 150px mellanrum från element som befinner sig ovanför den*/
+h2 {
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-weight: 800;
+    margin-top: 150px;
+}
+/* skapar en id för paragraph text, inuti paragrapher vill jag att texten alltid ska se ut på följande sätt därför använder jag mig av id i detta fall
+texten får sitt färg, tilldelat font family och en font weight*/
+#ptext {
+    color: rgb(223, 243, 38); 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+
+}
+/* dropbtn klassen definierar fullständigt utseenden på knappen som befinner sig längst uppe på sidan, alltså t.ex. att de ska ha en black backgroundcolor
+, att de ska ha en padding på 32px 40px att transition duration alltså då texten blir hovered(man åker med musen på knappen) då ska något hända, men
+med hjälp av transition duration attribute händer detta efter 0.7s, etc. */
+.dropbtn {
+    float: left;
+    background-color: black;
+    color: rgb(223, 243, 38);
+    width: 250px;
+    cursor: pointer;
+    padding: 32px 40px;
+    transition-duration: 0.7s;
+    border-right: none;
+    border-bottom: 1px solid rgb(223, 243, 38);
+    border-top: 1px solid rgb(223, 243, 38);
+    border-left: none;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  
+  /* Här skapar jag flera dropdown klasser som ser likadana ut men de behöver vara separata för att ha flera olika inline blocks, alltså
+  annars skulle t.ex. varje hidden block visas då man håller musen över vilken knapp som helst. */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdownhome {
+      position: relative;
+      display: inline-block;
+  }
+
+  .dropdownabout {
+      position: relative;
+      display: inline-block;
+  }
+
+  .dropdowncontact {
+      position: relative;
+      display: inline-block;
+  }
+ 
+  .dropdowndocu {
+      position: relative;
+      display: inline-block;
+  }
+/* klassen som definierar utseendet på de gömmda knapparna inuti inline block, här bestämmer jag också att de ska vara osynliga by defaul genom display: none; */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 248px;
+    z-index: 1;
+    border-right: 1px solid rgb(223, 243, 38);
+    border-left: 1px solid rgb(223, 243, 38);
+    border-bottom: 1px solid rgb(223, 243, 38);
+    border-top: none;
+    margin-top: 85px;
+  }
+  /* Här definierar jag återigen utseendet på blocken alltså på vilket sätt kommer blocken att se ut i princip */
+  .dropdown-content a {
+    color: rgb(223, 243, 38);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Oswald", sans-serif;
+    font-weight: 800;
+  }
+/* Bestämmer vad som händer då man håller musen på inline blocken, alltså knapparna som visas då man håller på specifik knapp,
+i detta fall kommer background-color att ändras från svart till gult då vi håller musen på den samt text färgen kommer att ändras till svart */ 
+  .dropdown-content a:hover {
+      background-color: rgb(223, 243, 38);
+      color: black;
+  }
+  /* Här finns definierat det att då musen befinner sig på specifika knappen kommer den osynliga inline blocken som finns i samma container att visas 
+  och att blocken är har klassen dropdown-content */
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+  /* upprepning ... */ 
+  .dropdownhome:hover .dropdown-content {
+      display: block;
+  }
+
+  .dropdownabout:hover .dropdown-content {
+      display: block;
+  }
+
+  .dropdowncontact:hover .dropdown-content {
+      display: block;
+  }
+
+  .dropdowndocu:hover .dropdown-content {
+      display: block;
+  }
+  /* här definierar jag att då man har musen på en av knapparna uppe på sidan t.ex. Home, About etc. kommer på samma sätt backgrunds färgen och text
+  färgen att ändras för att visa att den är markerad */
+  .dropbtn:hover {
+      background-color:rgb(223, 243, 38);
+      color: black;
+      border-left: 1px solid black;
+  }
+  /* Här skapar jag klassen för den tjockare horisontella linjen, genom att ge den en height på 30px samt en margin-top på 30px för att den ska ha mellanrum by default
+  från andra element ovan */ 
+  .hrstyle {
+      background-color:rgb(223, 243, 38);
+      border:1px solid rgb(223, 243, 38);
+      height: 30px;
+      margin-top: 30px;
+  }
+  /* Importerar en googlefont som jag använder sedan för Monster energy rubriken i monster.html */ 
+  @import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+  /* här skapar jag klassen för monster energy titeln där jag bestämmer textfärgen och skapar ganska stort lager av text-shadow för att skapa en fade
+  som är närmare och närmare svart */
+  .monsterNeonText {
+    color: rgb(67, 246, 73);
+    text-shadow:
+        0 0 7px rgb(67, 246, 73),
+        0 0 10px rgb(67, 246, 73),
+        0 0 21px rgb(67, 246, 73),
+        0 0 42px rgb(67, 246, 73),
+        0 0 82px rgb(67, 246, 73),
+        0 0 92px rgb(67, 246, 73),
+        0 0 102px rgb(67, 246, 73),
+        0 0 151px rgb(67, 246, 73);
+  }
+  /* skapar en animation klass som innehåller endast animationen som jag namn ger flicker som jag sedan skapar nedan skapar med @keyframes 
+  , med infinite tilldelar jag det ett oändligt värde alltså att den ska alltid vara på */
+  .neonAnimation {
+      animation: flicker 1.4s infinite alternate;
+  }
+  /* här skapar jag flicker animationen */ 
+  @keyframes flicker {
+    /* bestämmer med jämna mellanrum att text shadow ska gälla för dessa procent delar alltså att den ska ha en bestämd text shadow som skapar en utseende
+    som om den lyste */ 
+    0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 100% {
+
+        text-shadow:
+      0 0 4px black,
+      0 0 11px rgb(67, 246, 73),
+      0 0 19px black,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+    }
+    /* Då animationen är på 20%, 33 % och 48% kommer textshadow att stängas av för att skapa en slocknande lampa effekt */ 
+    20%, 33%, 48% {
+        text-shadow: none;
+    }
+  }
+  /* skapar en glitch container klass som bestämmer positionen för containern alltså absolute en transformation som skapar en två dimensionerad
+  transformation tack vare texten ser ut lite 3D */
+  .glitchcontainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+  }
+  /* klassen glitch som har en text färg passande till sidan alltså gult, en relative position, font size 64px margin top 100px alltså mellanrum ovan 100px
+  och mellanrum i botten på 50 px, därefter skapar jag animationen glitch som kommer att utspelas var 5 sekund och är oändligt */
+  .glitch {
+    color: rgb(223, 243, 38);
+    position: relative;
+    font-size: 64px;
+    margin: 100px 0px 50px 0px;
+    animation: glitch 5s 5s infinite;
+  }
+  /* alltså innan glitch animationen kommer texten data-text att se ut på följande sätt, uttnytjar även här glitcch animationen med en liten skillnad i sekunder, 
+  samt skapar en till animation noise-1 som händer var 3 s den är linjär och oändlig */
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: -5px 0 rgb(0, 255, 217);
+    background: black;
+    overflow: hidden;
+    top: 0;
+    animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  }
+  /* efter glitch animationen sker detta: en till animation skapas noise-2 som också sker var 3 sekund */ 
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -5px 0 lightgreen;
+    background: black;
+    overflow: hidden;
+    top: 0;
+    animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+  }
+  /* här skapar jag glitch animnationen där jag återigen använder mig av transform vid 1% då byter en av texterna sin position och vid 2% byter den position återigen 
+  därför skapas en glitch feeling. */
+  @keyframes glitch {
+    1%{
+      transform: rotateX(10deg) skewX(90deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+  /* här skapar jag en subtitle klass för den lilla texten som befinner sig under EBOOST glitchen, jag definierar dess utseende med fontfamiliy, font weight,etc. 
+  ger den en text-transform till uppercase alltså stora bokstäver, text-align, texten ska vara centrerad position absolute och en animation glitch-2 den sker 
+  2 millisekunder efter den vanliga animationen därför ser det ut som följd i princip*/
+  .subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: .8vw;
+    color: rgba(165, 141, 141, .4);
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    text-align: center;
+    position: absolute;
+    left: 17%;
+    animation: glitch-2 5s 5.02s infinite;
+  }
+  /* här skapar jag animationen det är i princip en upprepning av @keyframes glitch det enda som skiljer sig är att där var det 90deg här är det 70
+  en liten skillnad men det märks nästan inte, det är endast ifall man tittar väldigt noggrant ser man att animationen på texten nere sker lite lite
+  efter glitch */ 
+  @keyframes glitch-2 {
+    1%{
+      transform: rotateX(10deg) skewX(70deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+

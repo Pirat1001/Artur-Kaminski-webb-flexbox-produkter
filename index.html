@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Länkar till custom font families inuti head elementet samt till min stylesheet(css) så att html ska kunna avläsa klasser etc. -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="buttonFont">
+</head>
+<header>
+    <!-- Skapar en div container som jag ger en width på 100% alltså att den ska sträcka sig över hela sidan och en display
+    med värden flex för att elementen inuti div containern ska vara satta i en flex-row(default value) -->
+    <div style="width: 100%; display: flex;">
+        <!-- skapar en div container inuti den stora siv containern för att dela upp den i 5 lika stora delar, den småa div containern 
+        tilldelar jag klasserna dropdownhome och buttongroup som jag skapar i css, dessutom för att jämnt fördela 100% av sidan på 5 lika stora element ger jag div elementet en width på 20% -->
+        <div class="dropdownhome button-group" style="width: 20%;">
+            <!-- Skapar en anchor för att länka till index.html och inuti anchoret gör jag en button för att button ska länka till specifika sidor
+            , dessutom tilldelar jag en innan skapad klass i css deopbtn till buttonc, samt lägger till flera style element för att undvika småa buggar som lilla svarta sträck, rätt borders etc. -->
+            <a href="index.html"><button class="dropbtn" style="border-right: 1px solid black; background-color: rgb(223, 243, 38); color: black;"> Home </button></a>
+            <!-- innuti samma div container som button befinner sig skapar jag en till div element för de gömmda buttonsen som tack vare css 
+            visar sig då pekaren(musen) befinner sig på den specifika buttonsen, den här div element är en inline block -->
+            <div class="dropdown-content">
+                <a href="#"> HOME </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> HOME </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> HOME </a>
+            </div>
+        </div>
+        <!-- Upprepning -->
+        <div class="dropdown button-group" style="width: 20%;">
+            <a href="products.html"><button class="dropbtn"> Products </button></a>  
+            <div class="dropdown-content">
+                <a href="monster.html"> MONSTER </a>
+                <a href="redbull.html" style="border-top: 1px solid rgb(223, 243, 38);"> REDBULL </a>
+                <a href="rockstar.html" style="border-top: 1px solid rgb(223, 243, 38);"> ROCKSTAR </a>
+            </div>
+        </div>
+        <div class="dropdownabout button-group" style="width: 20%;">
+            <a href="about.html"><button class="dropbtn" style="border-left: 1px solid rgb(223, 243, 38);"> About </button></a>
+            <div class="dropdown-content">
+                <a href="#"> ABOUT </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> ABOUT </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> ABOUT </a>
+            </div>
+        </div>
+        <div class="dropdowncontact button-group" style="width: 20%;">
+            <a href="contact.html"><button class="dropbtn" style="border-right: 1px solid rgb(223, 243, 38); border-left: 1px solid rgb(223, 243, 38);"> Contact </button></a>
+            <div class="dropdown-content">
+                <a href="#"> CONTACT </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> CONTACT </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> CONTACT </a>
+            </div>
+        </div>
+        <div class="dropdowndocu button-group" style="width: 20%;">
+            <a href="documentation.html"><button class="dropbtn" style="border-left:1px solid rgb(223, 243, 38);"> Documentation </button></a>
+            <div class="dropdown-content">
+                <a href="#"> DOCUMENTATION </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> DOCUMENTATION </a>
+                <a href="#" style="border-top: 1px solid rgb(223, 243, 38);"> DOCUMENTATION </a>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+    <!-- Skapar en div container inuti kroppen av hela sidan som har klassen container dessutom style attribute på en flex display(default row) 
+    justify contnt som centrerar allt i containern och en bottom margin på 80px alltså mellanrum i botten -->
+    <div class="glithcontainer" style="display: flex; justify-content: center; margin-bottom: 80px;">
+        <!-- skapar en div container inuti div containern för EBOOST texten som får klassen glitch och data-text EBOOST 
+        vilket gör att texten är synligt från ett annat vinkel ungefär 3D -->
+        <div class="glitch" data-text="EBOOST"> EBOOST </div>  
+        <!-- En paragraph som befinner sig under EBOOST logon med hjälp av margin, den får en tilldelad klass subtitle -->
+        <p class="subtitle" style="margin: 180px 0px 0px 160px;"> ALL ENERGY DRINKS IN ONE PLACE </p>
+    </div>
+    <!-- skapar en horisontell linje som befinner sig under EBOOST logon och ovanför images, med background-color ändrar jag färgen på linjen,
+    samt måste jag lägga till en border för att utan det kommer linjen att försvinna samt ifall jag inte använder bordern blir det by default vit -->
+    <hr style="background-color:rgb(223, 243, 38); border: 1px solid rgb(223, 243, 38);">
+    <!-- Skapar en div container under den tunna linjen som får klassen imagerow(bild rad) och en botten margin(mellanrum) på 80px -->
+    <div style="margin-bottom: 80px;" class="imagerow">     
+        <!-- för varje bild skapar jag en separat div container för att kunna jämnt fördela de 100% av utrymme på tre bilder,
+        därför får varje av bild containers en width på 33.33% -->
+        <div class="imgcolumn" style="width: 33.33%;"> 
+            <!-- Här länkar jag bilden från foldern home-images samt namnger bilden för att känna igen den(alt) dessutom
+            anpassar storleken med style så att bilderna är tillräckligt stora osv. -->
+            <img src="home-images/monster-energy(1).png" alt="monster-energy" style="width: 100%; height: 200px;"></img>
+        </div>
+        <div class="imgcolumn" style="width: 33.33%;">    
+            <img src="home-images/redbull.png" alt="redbull" style="height: 175px; width: 50%;"></img>
+        </div>
+        <div class="imgcolumn" style="width: 33.33%;">
+            <img src="home-images/rockstar-energy.png" alt="rockstar-energy" style="width: 50%; height: 200px; margin-bottom: 50px;"></img>
+        </div>
+    </div>
+    <!-- upprepning tunn horisontell linje -->
+    <hr style="background-color:rgb(223, 243, 38); border:1px solid rgb(223, 243, 38);">
+    <!-- en h2 element(rubrik) med background color -->
+    <h2 style="background-color:rgb(223, 243, 38);"> Welcome to EBOOST </h2>
+    <!-- skapar en paragraph som jag ger en id ptext för att de specifika paragraphen alltid ska ha samma text font och style etc. -->
+    <p id="ptext">
+        <!-- använder mig flera gånger av <br>(break) för att skriva på nästa rad (enter)-->
+        EBOOST is an onlinestore where you're able to purchase your favourite energy drinks. 
+        <br> In association with the most popular energy drink brands we're the site you were looking for.
+        <br> <br> CHECK OUT OUR VARIOUS ENERGY DRINKS ON THE PRODUCTS TAB
+    </p>
+</body>
+<footer>
+
+</footer>
+
+</html>
